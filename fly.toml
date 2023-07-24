@@ -1,22 +1,20 @@
-# fly.toml app configuration file generated for datingapp-akr on 2023-07-23T22:46:11Z
+# fly.toml app configuration file generated for datingapp-akr on 2023-07-24T22:00:08Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = "datingapp-akr"
 primary_region = "dfw"
-
 kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
+kill_timeout = "5s"
 
 [build]
   image = "docker.io/fubeca2000/datingapp:latest"
 
 [env]
-  ASPNETCORE_URLS="http://+:8080"
-  CloudinarySettings__CloudName="dctj0q6wg"
-  CloudinarySettings__ApiKey="148429996279634"
+  ASPNETCORE_URLS = "http://+:8080"
+  CloudinarySettings__ApiKey = "148429996279634"
+  CloudinarySettings__CloudName = "dctj0q6wg"
 
 [http_service]
   internal_port = 8080
